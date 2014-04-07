@@ -26,13 +26,19 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
-class TeamProject extends JFrame implements ActionListener {
+public class TeamProject extends JFrame implements ActionListener {
 	JPanel back = new JPanel(); // 전체 패널들이 올라갈 가장 밑에 깔릴 패널
 	JPanel upside = new JPanel(); // 윗쪽 패널(동준이가 만들 부분 올라갈 패널)
 	JPanel downside = new JPanel(); // 아랫쪽 왼쪽 오른쪽 큰패널(나, 선주부분 각각 나눠질 부분)
 	JPanel leftside = new JPanel(); // 아랫쪽 왼쪽 패널(내꺼 올라갈 부분)
 	JPanel rightside = new JPanel(); // 아랫쪽 오른쪽 패널(선주꺼 올라갈 부분)
-
+	
+	JPanel pan = new JPanel();
+	JLabel userName = new JLabel("사용자 이름 : ", JLabel.RIGHT);
+	JLabel oneLine = new JLabel("한 줄 글쓰기 : ", JLabel.RIGHT);
+	JLabel userName_f = new JLabel();		//동준위 이름라벨
+	JLabel oneLine_f = new JLabel("어쩐지 오늘은 운수가 좋더라니만");		//동준위
+	
 	// 윗쪽 패널 재료
 	BorderLayout bl3 = new BorderLayout();
 	JButton register_bt = new JButton("책등록"); // 책등록
@@ -246,14 +252,10 @@ class TeamProject extends JFrame implements ActionListener {
 		setting_bt.setIcon(icon1);
 		setting_bt.setPreferredSize(new Dimension(50, 40)); // 아이콘 크기조정
 
-		JPanel pan = new JPanel();
-		JLabel userName = new JLabel("사용자 이름 : ", JLabel.RIGHT);
-		JLabel oneLine = new JLabel("한 줄 글쓰기 : ", JLabel.RIGHT);
-		JTextField userName_f = new JTextField(20);
-		JTextField oneLine_f = new JTextField(20);
+		
 		upside.setLayout(bl3);
 		upside.add(pan);
-
+	
 		pan.add(userName);
 		pan.add(userName_f);
 		pan.add(new JLabel("                   "));
